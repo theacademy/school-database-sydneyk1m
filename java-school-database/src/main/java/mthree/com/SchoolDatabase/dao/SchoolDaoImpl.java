@@ -49,7 +49,7 @@ public class SchoolDaoImpl implements SchoolDao {
         // for all courses in the Computer Science department.
         // YOUR CODE STARTS HERE
 
-         String sql = "SELECT c.courseCode, c.courseDesc FROM course c LEFT JOIN teacher t ON c.teacherId = t.tId WHERE t.dept = 'Computer Science';";
+         String sql = "SELECT c.courseCode, c.courseDesc FROM course c INNER JOIN teacher t ON c.teacherId = t.tId WHERE t.dept = 'Computer Science';";
 
         // YOUR CODE ENDS HERE
         return jdbcTemplate.query(sql, new CourseMapper());
