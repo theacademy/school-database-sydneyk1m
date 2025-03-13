@@ -49,7 +49,7 @@ public class SchoolDaoImpl implements SchoolDao {
         // for all courses in the Computer Science department.
         // YOUR CODE STARTS HERE
 
-         String sql = "SELECT ;";
+         String sql = "SELECT c.courseCode, c.courseDesc FROM course c LEFT JOIN teacher t ON c.teacherId = t.tId WHERE t.dept = 'Computer Science';";
 
         // YOUR CODE ENDS HERE
         return jdbcTemplate.query(sql, new CourseMapper());
@@ -112,7 +112,7 @@ public class SchoolDaoImpl implements SchoolDao {
         // Write a query to change the course description for course CS305 to "Advanced Python with Flask".
         // YOUR CODE STARTS HERE
 
-        String sql = "";
+        String sql = "UPDATE course SET courseDesc='Advanced Python with Flask' WHERE cid = '4';";
 
         // YOUR CODE ENDS HERE
         jdbcTemplate.update(sql);
